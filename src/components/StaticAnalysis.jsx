@@ -1,3 +1,5 @@
+import { CheckCircle } from 'lucide-react'
+
 export default function StaticAnalysis({ analysis }) {
   const unused_count = analysis?.unused_variables?.length || 0
   const dead_code_count = analysis?.dead_code?.length || 0
