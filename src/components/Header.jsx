@@ -2,7 +2,7 @@ import { Moon, Sun, History, Code2 } from 'lucide-react'
 
 export default function Header({ onToggleDarkMode, darkMode, historyCount, onShowHistory }) {
   return (
-    <header className="h-14 border-b border-gray-200 dark:border-slate-800 flex items-center px-6 bg-white dark:bg-slate-900/50 shrink-0 z-10">
+    <header className="h-14 border-b border-gray-200 dark:border-slate-800 flex items-center px-6 bg-white dark:bg-slate-900/50 shrink-0 z-10 transition-colors duration-300">
       <div className="flex items-center justify-between w-full">
         <div className="flex items-center gap-4">
           <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold text-white text-sm shadow-sm">

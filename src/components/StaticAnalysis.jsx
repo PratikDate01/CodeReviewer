@@ -10,19 +10,19 @@ export default function StaticAnalysis({ analysis }) {
     <div className="space-y-4">
       {/* Mini Stats Bar */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Pylint</p>
           <p className="text-sm font-black text-blue-600 dark:text-blue-400">{(analysis?.pylint_score || 0).toFixed(1)}</p>
         </div>
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Unused</p>
           <p className={`text-sm font-black ${unused_count > 0 ? 'text-amber-500' : 'text-gray-300 dark:text-slate-700'}`}>{unused_count}</p>
         </div>
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Dead Code</p>
           <p className={`text-sm font-black ${dead_code_count > 0 ? 'text-red-500' : 'text-gray-300 dark:text-slate-700'}`}>{dead_code_count}</p>
         </div>
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Exceptions</p>
           <p className={`text-sm font-black ${exception_count > 0 ? 'text-red-500' : 'text-gray-300 dark:text-slate-700'}`}>{exception_count}</p>
         </div>
@@ -34,7 +34,7 @@ export default function StaticAnalysis({ analysis }) {
           { label: 'Dead Code', items: analysis?.dead_code, color: 'text-red-600 dark:text-red-400', bg: 'bg-red-500/5', border: 'border-red-500/10' },
           { label: 'Exceptions', items: analysis?.exception_handling, color: 'text-red-600 dark:text-red-400', bg: 'bg-red-500/5', border: 'border-red-500/10' },
         ].filter(g => g.items?.length > 0).map(group => (
-          <div key={group.label} className={`p-3 rounded-lg border ${group.border} ${group.bg}`}>
+          <div key={group.label} className={`p-3 rounded-lg border ${group.border} ${group.bg} transition-all duration-300`}>
              <h4 className={`text-[11px] font-black uppercase tracking-widest mb-2 ${group.color}`}>{group.label}</h4>
              <div className="space-y-1.5">
                {group.items.map((issue, idx) => (
@@ -48,7 +48,7 @@ export default function StaticAnalysis({ analysis }) {
       </div>
 
       {total_issues === 0 && (
-        <div className="p-4 bg-emerald-500/5 border border-emerald-500/10 rounded-lg flex items-center gap-3">
+        <div className="p-4 bg-emerald-500/5 border border-emerald-500/10 rounded-lg flex items-center gap-3 transition-all duration-300">
           <CheckCircle size={16} className="text-emerald-500" />
           <p className="text-xs font-bold text-emerald-800 dark:text-emerald-500 uppercase tracking-tight">Static Rules Passed</p>
         </div>

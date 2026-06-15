@@ -7,19 +7,19 @@ export default function ComplexityDetails({ complexity }) {
     <div className="space-y-4">
       {/* Metrics Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Complexity</p>
           <p className="text-sm font-black text-blue-600 dark:text-blue-400">{(complexity.cyclomatic_complexity || 0).toFixed(1)}</p>
         </div>
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Maintainability</p>
           <p className="text-sm font-black text-emerald-500">{(complexity.maintainability_index || 0).toFixed(1)}</p>
         </div>
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Avg CC</p>
           <p className="text-sm font-black text-blue-500">{(complexity.avg_complexity || 0).toFixed(1)}</p>
         </div>
-        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md">
+        <div className="px-3 py-2 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-md transition-all duration-300">
           <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tighter">Functions</p>
           <p className="text-sm font-black text-gray-600 dark:text-slate-400">{complexity.function_count || 0}</p>
         </div>
@@ -28,7 +28,7 @@ export default function ComplexityDetails({ complexity }) {
       <div className="space-y-2">
         {/* CC List */}
         {complexity.cyclomatic_complexity_list && complexity.cyclomatic_complexity_list.length > 0 && (
-          <div className="p-3 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-lg">
+          <div className="p-3 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-lg transition-all duration-300">
             <h4 className="text-[10px] font-black uppercase tracking-widest mb-3 text-gray-400 dark:text-slate-500 flex items-center gap-2">
               <Activity size={12} />
               Function Complexity
@@ -51,7 +51,7 @@ export default function ComplexityDetails({ complexity }) {
 
         {/* Long Functions */}
         {complexity.long_functions_list && complexity.long_functions_list.length > 0 && (
-          <div className="p-3 bg-red-500/5 border border-red-500/10 rounded-lg">
+          <div className="p-3 bg-red-500/5 border border-red-500/10 rounded-lg transition-all duration-300">
             <h4 className="text-[10px] font-black uppercase tracking-widest mb-2 text-red-500 flex items-center gap-2">
               <AlertTriangle size={12} />
               Long Functions

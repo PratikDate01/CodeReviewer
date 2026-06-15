@@ -41,11 +41,11 @@ export default function CodeEditor({
   }
 
   return (
-    <div className={`flex flex-col flex-1 min-h-0 bg-white dark:bg-slate-950 transition-all ${
+    <div className={`flex flex-col flex-1 min-h-0 bg-white dark:bg-slate-950 transition-all duration-300 ${
       isFullscreen ? 'fixed inset-0 z-[100]' : 'relative h-full'
     }`}>
       {/* Editor Header/Tabs */}
-      <div className="h-10 border-b border-gray-200 dark:border-slate-800 flex items-center justify-between px-4 bg-gray-50/50 dark:bg-slate-900/30 shrink-0">
+      <div className="h-10 border-b border-gray-200 dark:border-slate-800 flex items-center justify-between px-4 bg-gray-50/50 dark:bg-slate-900/30 shrink-0 transition-colors duration-300">
         <div className="flex items-center gap-4 h-full">
           <div className="flex items-center gap-2 px-2 h-full border-b-2 border-blue-500 text-blue-600 dark:text-blue-400 font-semibold text-xs uppercase tracking-wider">
             <FileCode size={14} />
@@ -110,7 +110,7 @@ export default function CodeEditor({
       <div className="flex-1 flex min-h-0 overflow-hidden relative group">
         <div 
           ref={lineNumbersRef}
-          className="w-12 bg-gray-50/50 dark:bg-slate-900/20 border-r border-gray-100 dark:border-slate-900 py-4 text-right pr-3 font-mono text-[11px] text-gray-300 dark:text-slate-700 select-none overflow-hidden"
+          className="w-12 bg-gray-50/50 dark:bg-slate-900/20 border-r border-gray-100 dark:border-slate-900 py-4 text-right pr-3 font-mono text-[11px] text-gray-300 dark:text-slate-700 select-none overflow-hidden transition-all duration-300"
         >
           {Array.from({ length: Math.max(lineNumbers, 1) }).map((_, i) => (
             <div key={i} className="leading-6">{i + 1}</div>
@@ -124,7 +124,7 @@ export default function CodeEditor({
           onScroll={handleScroll}
           disabled={loading}
           placeholder="# Paste your Python code here..."
-          className="flex-1 px-4 py-4 bg-transparent text-gray-800 dark:text-slate-200 focus:outline-none font-mono text-sm leading-6 resize-none placeholder-gray-300 dark:placeholder-slate-700 overflow-y-auto custom-scrollbar whitespace-pre"
+          className="flex-1 px-4 py-4 bg-transparent text-gray-800 dark:text-slate-200 focus:outline-none font-mono text-sm leading-6 resize-none placeholder-gray-300 dark:placeholder-slate-700 overflow-y-auto custom-scrollbar whitespace-pre transition-colors duration-300"
           spellCheck="false"
         />
 

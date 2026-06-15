@@ -39,7 +39,7 @@ export default function AdvancedAnalysis({ analysis }) {
         {analysis.issues?.map((issue, idx) => (
           <div
             key={idx}
-            className={`group rounded-lg border ${getSeverityColor(issue.severity)} transition-all duration-200 cursor-pointer overflow-hidden`}
+            className={`group rounded-lg border ${getSeverityColor(issue.severity)} transition-all duration-300 cursor-pointer overflow-hidden`}
             onClick={() => setExpandedIssue(expandedIssue === idx ? null : idx)}
           >
             <div className="p-3 flex items-start gap-3">
@@ -75,7 +75,7 @@ export default function AdvancedAnalysis({ analysis }) {
         ))}
 
         {totalIssues === 0 && (
-          <div className="p-8 border border-emerald-200 dark:border-emerald-900/30 bg-emerald-50 dark:bg-emerald-950/10 rounded-xl text-center">
+          <div className="p-8 border border-emerald-200 dark:border-emerald-900/30 bg-emerald-50 dark:bg-emerald-950/10 rounded-xl text-center transition-all duration-300">
             <CheckCircle size={32} className="text-emerald-500 mx-auto mb-3" />
             <h4 className="text-sm font-bold text-emerald-800 dark:text-emerald-400 uppercase tracking-widest">Clear Scan</h4>
             <p className="text-xs text-emerald-700 dark:text-emerald-500 mt-1">No security vulnerabilities or deep logic issues detected.</p>
@@ -87,7 +87,7 @@ export default function AdvancedAnalysis({ analysis }) {
       {analysis.recommendations && analysis.recommendations.length > 0 && (
         <div className="space-y-3">
           {analysis.recommendations.map((rec, idx) => (
-            <div key={idx} className="flex gap-3 p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 shadow-sm">
+            <div key={idx} className="flex gap-3 p-4 rounded-lg bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 shadow-sm transition-all duration-300">
               <Lightbulb size={18} className="text-amber-500 shrink-0 mt-0.5" />
               <p className="text-xs text-gray-600 dark:text-slate-400 leading-relaxed font-medium">{rec}</p>
             </div>

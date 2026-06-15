@@ -82,7 +82,7 @@ function App() {
   }
 
   return (
-    <div className={`h-screen flex flex-col overflow-hidden ${darkMode ? 'dark bg-slate-950 text-slate-200' : 'bg-gray-50 text-gray-900'}`}>
+    <div className={`h-screen flex flex-col overflow-hidden transition-colors duration-300 ${darkMode ? 'dark bg-slate-950 text-slate-200' : 'bg-gray-50 text-gray-900'}`}>
       <Header
         onToggleDarkMode={() => setDarkMode(!darkMode)}
         darkMode={darkMode}
@@ -105,7 +105,7 @@ function App() {
           </div>
 
           {/* Right Panel: Results/History */}
-          <div className="lg:col-span-5 xl:col-span-4 flex flex-col bg-gray-50/50 dark:bg-slate-900/20 min-h-0 overflow-hidden">
+          <div className="lg:col-span-5 xl:col-span-4 flex flex-col bg-gray-50/50 dark:bg-slate-900/20 min-h-0 overflow-hidden transition-colors duration-300">
             <div className="flex-1 overflow-y-auto custom-scrollbar p-6">
               {showHistory ? (
                 <ReviewHistory

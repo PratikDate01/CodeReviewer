@@ -16,7 +16,7 @@ export default function ScoreDisplay({ scoring, reviewMode }) {
   return (
     <div className="space-y-4">
       {/* Main Score Bar */}
-      <div className={`p-6 rounded-xl border ${getScoreBg(scoring.final_score)} transition-all`}>
+      <div className={`p-6 rounded-xl border ${getScoreBg(scoring.final_score)} transition-all duration-300`}>
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-xs font-bold text-gray-500 dark:text-slate-500 uppercase tracking-widest mb-1">Overall Health Score</h2>
@@ -57,7 +57,7 @@ export default function ScoreDisplay({ scoring, reviewMode }) {
       {/* Metric Breakdown */}
       <div className="grid grid-cols-2 gap-3">
         {(reviewMode === 'hybrid' || reviewMode === 'static' || reviewMode === 'advanced') && (
-          <div className="p-3 rounded-lg border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+          <div className="p-3 rounded-lg border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900/50 transition-all duration-300">
             <div className="flex justify-between items-center mb-1">
               <span className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tight">Static Analysis</span>
               <span className={`text-xs font-bold ${getScoreColor(scoring.static_score)}`}>{scoring.static_score.toFixed(1)}</span>
@@ -68,7 +68,7 @@ export default function ScoreDisplay({ scoring, reviewMode }) {
           </div>
         )}
         {(reviewMode === 'hybrid' || reviewMode === 'ai') && (
-          <div className="p-3 rounded-lg border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+          <div className="p-3 rounded-lg border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900/50 transition-all duration-300">
             <div className="flex justify-between items-center mb-1">
               <span className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-tight">AI Insights</span>
               <span className={`text-xs font-bold ${getScoreColor(scoring.ai_score)}`}>{scoring.ai_score.toFixed(1)}</span>

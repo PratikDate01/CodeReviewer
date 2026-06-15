@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Code Reviewer</title>
-    <script type="module" crossorigin src="/assets/index-CEzk2KCB.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Djrl2Bnd.css">
+    <script>
+      (function() {
+        try {
+          const saved = localStorage.getItem('darkMode');
+          if (saved === 'true') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BAZNIqXR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CH8lk64d.css">
   </head>
   <body>
     <div id="root"></div>
